@@ -1,0 +1,11 @@
+version: "3"
+services:
+  node-app:
+    build: .
+    container_name: "docker-nodejs-container"
+    volumes:
+      - ./src/:/app/src:ro
+    command: npm run start
+    ports:
+      - 4000:4000
+   
