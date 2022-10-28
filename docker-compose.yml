@@ -1,11 +1,18 @@
-version: "3"
+version: "3.5"
 services:
   node-app:
     build: .
+    image: bouhmouch/docker-nodejs
     container_name: "docker-nodejs-container"
     volumes:
       - ./src/:/app/src:ro
     command: npm run start
     ports:
       - 4000:4000
+ 
+networks:
+  default:
+    name: net_bridge
+    external: true
+
    
